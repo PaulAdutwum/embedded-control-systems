@@ -64,17 +64,17 @@ This project implements a **real-time control system** for automated actuation, 
 
 ## 🔧 Hardware Requirements
 
-| Component | Quantity | Description |
-|-----------|----------|-------------|
-| Arduino Uno/Nano | 1 | Main microcontroller |
-| HC-SR04 | 1 | Ultrasonic distance sensor |
-| SG90 Servo | 1 | 180° rotation servo motor |
-| LDR | 1 | Light-dependent resistor |
-| Potentiometer | 1 | 10kΩ for sensitivity control |
-| LED | 1 | 5mm indicator LED |
-| Passive Buzzer | 1 | Alarm output |
-| Motor + Transistor | 1 | High-power actuation (NPN transistor) |
-| Resistors | Various | 220Ω for LED, 10kΩ for LDR |
+| Component          | Quantity | Description                           |
+| ------------------ | -------- | ------------------------------------- |
+| Arduino Uno/Nano   | 1        | Main microcontroller                  |
+| HC-SR04            | 1        | Ultrasonic distance sensor            |
+| SG90 Servo         | 1        | 180° rotation servo motor             |
+| LDR                | 1        | Light-dependent resistor              |
+| Potentiometer      | 1        | 10kΩ for sensitivity control          |
+| LED                | 1        | 5mm indicator LED                     |
+| Passive Buzzer     | 1        | Alarm output                          |
+| Motor + Transistor | 1        | High-power actuation (NPN transistor) |
+| Resistors          | Various  | 220Ω for LED, 10kΩ for LDR            |
 
 ### Pin Configuration
 
@@ -138,10 +138,10 @@ Data is transmitted via UART at **9600 baud** in the following format:
 <angle>,<distance>.
 ```
 
-| Field | Type | Range | Description |
-|-------|------|-------|-------------|
-| angle | int | 15-165 | Current servo position in degrees |
-| distance | int | 0-400 | Measured distance in centimeters |
+| Field    | Type | Range  | Description                       |
+| -------- | ---- | ------ | --------------------------------- |
+| angle    | int  | 15-165 | Current servo position in degrees |
+| distance | int  | 0-400  | Measured distance in centimeters  |
 
 **Example:** `90,25.` → Angle: 90°, Distance: 25cm
 
@@ -150,17 +150,20 @@ Data is transmitted via UART at **9600 baud** in the following format:
 ## 🎮 Operation Modes
 
 ### Normal Scanning
+
 - Continuous 180° sweep pattern
 - Green radar line on visualization
 - Distance displayed in real-time
 
 ### Target Lock (Object Detected)
+
 - **LED**: Solid ON
 - **Motor**: Activated (fan/cooling)
 - **Buzzer**: Active only in low-light conditions
 - **Display**: Red "TARGET LOCKED" warning
 
 ### Smart Features
+
 - **Light-Aware Alarm**: Buzzer only activates when `lightLevel < 900` (nighttime)
 - **Adjustable Threshold**: Potentiometer controls detection range (5-50cm)
 
@@ -168,15 +171,15 @@ Data is transmitted via UART at **9600 baud** in the following format:
 
 ## 📊 Performance Specifications
 
-| Metric | Value |
-|--------|-------|
-| Sweep Range | 150° (15° - 165°) |
-| Angular Resolution | 1° per step |
-| Response Time | <50ms |
-| Detection Range | 2cm - 400cm |
-| Detection Accuracy | ±3mm |
-| Sweep Period | ~9 seconds (full cycle) |
-| Baud Rate | 9600 bps |
+| Metric             | Value                   |
+| ------------------ | ----------------------- |
+| Sweep Range        | 150° (15° - 165°)       |
+| Angular Resolution | 1° per step             |
+| Response Time      | <50ms                   |
+| Detection Range    | 2cm - 400cm             |
+| Detection Accuracy | ±3mm                    |
+| Sweep Period       | ~9 seconds (full cycle) |
+| Baud Rate          | 9600 bps                |
 
 ---
 
@@ -213,7 +216,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Paul Adutwum**
 
-*Embedded Systems Developer*
+_Embedded Systems Developer_
 
 ---
 
@@ -222,4 +225,3 @@ This project is open source and available under the [MIT License](LICENSE).
 **Built with ❤️ and Arduino**
 
 </div>
-
