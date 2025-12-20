@@ -7,6 +7,7 @@
 
 #include "pwm.h"
 #include "../include/hal.h"
+#include <stddef.h> /* For NULL */
 
 /*============================================================================
  *                         PRIVATE VARIABLES
@@ -28,7 +29,7 @@ static uint8_t motor_pin = MOTOR_PIN;
 #endif
 
 /*============================================================================
- *                         PRIVATE FUNCTIONS
+ *                    PRIVATE FUNCTIONS
  *============================================================================*/
 
 /**
