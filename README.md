@@ -13,6 +13,32 @@
 
 ---
 
+## 📸 Demo
+
+<div align="center">
+
+![LIDAR System Hardware](images/hardware.jpeg)
+_Hardware setup: Servo-mounted ultrasonic sensor with Arduino controller_
+
+![Hardware Assembly](images/hardware1.jpeg)
+_System assembly with sensor array and actuators_
+
+![Radar Display](images/display.jpeg)
+_Real-time radar visualization showing detected objects_
+
+</div>
+
+### 🎥 Video Demo
+
+<!-- Option 1: Link to YouTube/external video -->
+
+[![Watch Demo](https://img.shields.io/badge/▶_Watch_Demo-YouTube-FF0000?style=for-the-badge&logo=youtube)](https://youtube.com/your-video-link)
+
+<!-- Option 2: GIF (recommended for GitHub) -->
+<!-- ![Demo GIF](images/demo.gif) -->
+
+---
+
 ## 📋 Overview
 
 This project implements a **real-time control system** for automated actuation, integrating ultrasonic Lidar sensor data via **UART protocols** to map obstruction zones with centimeter-level precision. The system features a sweeping radar display with visual feedback and smart alarm capabilities.
@@ -197,11 +223,28 @@ Data is transmitted via UART at **9600 baud** in the following format:
 
 ```
 Arduino/
-├── README.md                 # This file
+├── README.md                    # This file
+├── images/                      # Project photos and demos
+│   ├── hardware.jpeg            # Hardware setup photo
+│   ├── hardware1.jpeg           # System assembly photo
+│   └── display.jpeg             # Radar visualization screenshot
 ├── Radar_Code/
-│   └── Radar_Code.ino       # Arduino firmware
-├── radar.py                  # Python/Pygame visualization
-└── Main.java                 # Processing visualization
+│   └── Radar_Code.ino           # Arduino firmware
+├── Lidar_Control_System_C/      # Comprehensive C implementation
+│   ├── src/                     # Source files
+│   │   ├── main.c               # Main application
+│   │   ├── hal.c                # Hardware abstraction layer
+│   │   └── state_machine.c      # State machine logic
+│   ├── drivers/                 # Hardware drivers
+│   │   ├── uart.c/h             # UART communication
+│   │   ├── pwm.c/h              # Motor control
+│   │   └── sensor.c/h           # Sensor interface
+│   ├── include/                 # Header files
+│   │   ├── config.h             # System configuration
+│   │   └── hal.h                # HAL interface
+│   └── Makefile                 # Build system
+├── radar.py                     # Python/Pygame visualization
+└── Main.java                    # Processing visualization
 ```
 
 ---
