@@ -150,7 +150,7 @@ python radar.py
 
 ### Processing Visualization (Alternative)
 
-1. Open `Main.java` in Processing IDE
+1. Open `Radar_Visualization.pde` in Processing IDE
 2. Update `COM5` to your serial port
 3. Run the sketch
 
@@ -244,7 +244,7 @@ Arduino/
 │   │   └── hal.h                # HAL interface
 │   └── Makefile                 # Build system
 ├── radar.py                     # Python/Pygame visualization
-└── Main.java                    # Processing visualization
+└── Radar_Visualization.pde      # Processing visualization
 ```
 
 ---
