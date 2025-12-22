@@ -124,6 +124,12 @@ Servo myServo;  // Attached to Pin 2
 
 ---
 
+## 🚀 Quick Start
+
+**See the complete setup guide: [SETUP_GUIDE.md](SETUP_GUIDE.md)**
+
+---
+
 ## 💻 Software Setup
 
 ### Arduino Firmware
@@ -224,6 +230,7 @@ Data is transmitted via UART at **9600 baud** in the following format:
 ```
 Arduino/
 ├── README.md                    # This file
+├── SETUP_GUIDE.md               # Step-by-step setup instructions
 ├── images/                      # Project photos and demos
 │   ├── hardware.jpeg            # Hardware setup photo
 │   ├── hardware1.jpeg           # System assembly photo
