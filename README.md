@@ -18,13 +18,14 @@
 <div align="center">
 
 ![LIDAR System Hardware](images/hardware.jpeg)
-_Hardware setup: Servo-mounted ultrasonic sensor with Arduino controller_
+
+
 
 ![Hardware Assembly](images/hardware1.jpeg)
 _System assembly with sensor array and actuators_
 
-![Radar Display](images/display.jpeg)
-_Real-time radar visualization showing detected objects_
+![Display](images/display.jpeg)
+_Real-time visualization showing detected objects_
 
 </div>
 
@@ -56,34 +57,7 @@ This project implements a **real-time control system** for automated actuation, 
 
 ## 🏗️ System Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    AUTONOMOUS LIDAR SYSTEM                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  ┌──────────────┐    UART     ┌──────────────────────────────┐  │
-│  │   Arduino    │────────────▶│   Visualization (Python/     │  │
-│  │   Uno/Nano   │  9600 baud  │   Processing)                │  │
-│  └──────────────┘             └──────────────────────────────┘  │
-│         │                                                       │
-│         ▼                                                       │
-│  ┌──────────────────────────────────────────────────────────┐   │
-│  │                    SENSOR ARRAY                          │   │
-│  │  • HC-SR04 Ultrasonic (Trig: Pin 12, Echo: Pin 13)      │   │
-│  │  • SG90 Servo Motor (PWM: Pin 2)                        │   │
-│  │  • LDR Light Sensor (Analog: A0)                        │   │
-│  │  • Potentiometer (Analog: A1)                           │   │
-│  └──────────────────────────────────────────────────────────┘   │
-│         │                                                       │
-│         ▼                                                       │
-│  ┌──────────────────────────────────────────────────────────┐   │
-│  │                   OUTPUT ACTUATORS                       │   │
-│  │  • LED Indicator (Pin 3)                                │   │
-│  │  • Passive Buzzer (Pin 4)                               │   │
-│  │  • High-Power Motor via Transistor (Pin 8)              │   │
-│  └──────────────────────────────────────────────────────────┘   │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -93,7 +67,7 @@ This project implements a **real-time control system** for automated actuation, 
 | Component          | Quantity | Description                           |
 | ------------------ | -------- | ------------------------------------- |
 | Arduino Uno/Nano   | 1        | Main microcontroller                  |
-| HC-SR04            | 1        | Ultrasonic distance sensor            |
+| HC-SR04            | 1        | Ultrasonic distance sensor / LIDAR          |
 | SG90 Servo         | 1        | 180° rotation servo motor             |
 | LDR                | 1        | Light-dependent resistor              |
 | Potentiometer      | 1        | 10kΩ for sensitivity control          |
