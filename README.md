@@ -1,28 +1,79 @@
 #  Autonomous Lidar Control System
 
-Project: Autonomous Lidar & Electro-Mechanical Control System
-Technical Overview
-This project implements a high-reliability real-time control system designed for automated obstacle detection and actuation. The system integrates Lidar/ultrasonic sensor data via UART and GPIO protocols to map environment obstruction zones with centimeter-level precision. The core architecture is built on a bare-metal C firmware foundation, utilizing Interrupt Service Routines (ISRs) to maintain a deterministic system response time of <50ms.
+# Project: Autonomous Lidar & Electro-Mechanical Control System
 
-Engineering Specifications
-Closed-Loop Actuation: 180-degree automated sweep (15° to 165°) driven by a servo motor utilizing precise Pulse Width Modulation (PWM) control.
+## Technical Overview
 
-Low-Latency Processing: Optimized state-machine transitions ensure real-time distance calculation and sensor-to-motor reaction speeds suitable for safety-critical environments.
+This project implements a high-reliability real-time control system designed for automated obstacle detection and actuation. The system integrates Lidar and ultrasonic sensor data through UART and GPIO protocols to map environmental obstruction zones with centimeter-level precision.
 
-Hardware-Software Integration: Implemented a robust data pipeline to ingest raw distance signals, applying threshold-based logic to trigger a synchronized response across a piezo buzzer, LED array, and motor drivetrain.
+The core architecture is built using C, utilizing Interrupt Service Routines (ISRs) to maintain deterministic system response times of less than 50ms. The goal was to create a dependable closed-loop control system capable of immediate sensing, decision-making, and physical response in safety-critical environments.
 
-Signal Calibration: Integrated a potentiometer-based tuning system to allow for dynamic adjustment of the detection sensitivity (5cm to 50cm) based on environment noise and operational requirements.
+-
 
-Validation & Visualization: Real-time telemetry data is streamed via serial communication to a custom Python-based GUI for system characterization and performance monitoring.
+### Closed-Loop Actuation
 
-Technical Stack & Tools
-Languages: Bare-metal C, Python (Telemetry Visualization)
+Designed a 180-degree automated sweep system (15° to 165°) driven by a servo motor using precise Pulse Width Modulation (PWM) control for accurate directional movement and obstacle scanning.
 
-Protocols: UART, PWM, GPIO, Serial Communication
+### Low-Latency Processing
 
-Hardware Debugging: Logic Analyzers (Signal Timing), Oscilloscopes (Signal Integrity), Multimeters
+Optimized state-machine transitions to ensure real-time distance calculations and fast sensor-to-motor reaction speeds suitable for responsive obstacle avoidance and safety-critical control systems.
 
-Control Theory: State-Machine Architecture, Deterministic Timing, ISR Management
+### Hardware-Software Integration
+
+Built a robust data pipeline to ingest raw distance signals and apply threshold-based logic that triggers synchronized responses across multiple hardware components, including:
+
+- Piezo buzzer
+- LED array
+- Motor drivetrain
+
+This created a full electro-mechanical response system driven directly by sensor input.
+
+### Signal Calibration
+
+Integrated a potentiometer-based tuning system that allows dynamic adjustment of detection sensitivity from 5cm to 50cm depending on environmental noise levels and operational requirements.
+
+### Validation and Visualization
+
+Implemented real-time telemetry streaming through serial communication to a custom Python-based GUI used for:
+
+- System characterization
+- Live monitoring
+- Performance validation
+- Sensor behavior analysis
+
+---
+
+## Technical Stack and Tools
+
+### Languages
+
+- Bare-metal C
+- Python (Telemetry Visualization)
+
+### Protocols
+
+- UART
+- PWM
+- GPIO
+- Serial Communication
+
+### Hardware Debugging Tools
+
+- Logic Analyzers (Signal Timing)
+- Oscilloscopes (Signal Integrity)
+- Multimeters
+
+### Control Theory Concepts
+
+- State-Machine Architecture
+- Deterministic Timing
+- Interrupt Service Routine (ISR) Management
+
+---
+
+## Key Learning Outcomes
+
+This project strengthened my understanding of the intersection between firmware, embedded systems, hardware debugging, and electro-mechanical control. It taught me how to design reliable low-level systems where timing, signal integrity, and hardware precision directly determine overall system performance.
 
 ---
 
